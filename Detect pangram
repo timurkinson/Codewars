@@ -1,0 +1,21 @@
+public class PangramChecker {
+  public boolean check(String sentence){
+    int count = 0;
+    char[] alph = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
+    int[] ind = new int[26];
+    boolean res = false;
+    if (sentence != null && sentence.length() >= 26){
+      sentence.toLowerCase();
+      for (int i = 0; i < 26; i++){
+        ind[i] = sentence.indexOf(alph[i]);
+        if (ind[i] >= 0){
+          count += 1;
+        }
+      }
+      if (count == 26){
+        res = true;
+      }
+    }
+    return res;
+  }
+}
